@@ -4,22 +4,22 @@
 
 import re
 
-def line_fixer(line):
+def line_fixer(input_line):
     """Fixing the cities in each line in temp-data so they match the pop-data"""
-    line = re.sub('Windsor Locks','Hartford',line)
-    line = re.sub('Covington','Cincinnati',line)
-    line = re.sub('Detroit/Wayne','Detroit',line)
-    line = re.sub('NYC/LaGuardia','New York',line)
-    line = re.sub('Chicago O\'Hare','Chicago',line)
-    line = re.sub('Phoenix/Sky HRBR','Phoenix',line)
-    line = re.sub('Raleigh/Durham','Raleigh',line)
-    line = re.sub('Sacramento/Execu','Sacramento',line)
-    line = re.sub('St Louis/Lambert','St. Louis',line)
-    line = re.sub('Wash DC/Dulles','Dulles',line)
+    input_line = re.sub('Windsor Locks','Hartford',input_line)
+    input_line = re.sub('Covington','Cincinnati',input_line)
+    input_line = re.sub('Detroit/Wayne','Detroit',input_line)
+    input_line = re.sub('NYC/LaGuardia','New York',input_line)
+    input_line = re.sub('Chicago O\'Hare','Chicago',input_line)
+    input_line = re.sub('Phoenix/Sky HRBR','Phoenix',input_line)
+    input_line = re.sub('Raleigh/Durham','Raleigh',input_line)
+    input_line = re.sub('Sacramento/Execu','Sacramento',input_line)
+    input_line = re.sub('St Louis/Lambert','St. Louis',input_line)
+    input_line = re.sub('Wash DC/Dulles','Dulles',input_line)
     portland_me = "KPWM"
     if portland_me in line:
-        line = re.sub('Portland','PortlandM',line)
-    return line
+        input_line = re.sub('Portland','PortlandM',input_line)
+    return input_line
 
 with open("temp-data.csv") as file:
     d = file.readlines()
